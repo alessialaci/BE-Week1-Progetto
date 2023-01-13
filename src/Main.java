@@ -85,7 +85,8 @@ public class Main {
         		controlloTipo(elementi[4]);
             	break;
             default:
-            	lettore();
+            	System.out.println("Valore errato, scegli tra quelli mostrati");
+            	sceltaElemento();
 		}
 		scan6.close();
 	}
@@ -127,6 +128,10 @@ public class Main {
 					System.out.println("Luminosità abbassata!");
 					controlloTipo(array);
 					break;
+				default:
+					System.out.println("Valore errato");
+					controlloTipo(array);
+					break;
 			}
 			scan7.close();
 		} else if (array instanceof Audio) {
@@ -152,6 +157,10 @@ public class Main {
 					System.out.println("Volume abbassato!");
 					controlloTipo(array);
 					break;
+				default:
+					System.out.println("Valore errato");
+					controlloTipo(array);
+					break;
 			}
 			scan8.close();
 		} else {
@@ -175,6 +184,10 @@ public class Main {
 				case(3):
 					((Immagine) array).diminuisciLuminosita();
 					System.out.println("Luminosità abbassata!");
+					controlloTipo(array);
+					break;
+				default:
+					System.out.println("Valore errato");
 					controlloTipo(array);
 					break;
 			}
