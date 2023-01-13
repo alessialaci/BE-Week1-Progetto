@@ -63,11 +63,11 @@ public class Main {
 	
 	public static void sceltaElemento() {
 		Scanner scan6 = new Scanner(System.in);
-		System.out.println("Scegli un elemento:");
+		System.out.println("Scegli un elemento (o premi 0 per uscire):");
 		int sceltaMedia = scan6.nextInt();
 		switch(sceltaMedia) {
 			case(0):
-				lettore();
+				System.out.println("Non stai riproducendo/mostrando nessun file multimediale");
 				break;
         	case(1):
         		controlloTipo(elementi[0]);
