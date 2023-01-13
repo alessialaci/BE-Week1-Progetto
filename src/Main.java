@@ -57,8 +57,9 @@ public class Main {
 		    System.out.println(x + " - " + elementi[i]);
 		}
 		
-		scan1.close();
+
 		sceltaElemento();
+		
 		
 	}
 	

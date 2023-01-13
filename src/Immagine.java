@@ -28,7 +28,7 @@ public class Immagine extends ElementoMultimediale implements Luminosita {
 		String luminosita = "";
 		
 		for(int l = this.luminosita; l > 0; l--) {
-			luminosita += "*";;
+			luminosita += "*";
 		}
 		
 		System.out.println(this.titolo + " luminosità: " + luminosita);
