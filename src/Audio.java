@@ -40,6 +40,6 @@ public class Audio extends ElementoMultimediale implements Volume {
 	
 	@Override
     public String toString() {
-        return "Elemento Audio: " + this.titolo + " durata: " + this.durata;
+        return "Elemento Audio " + this.titolo + " durata " + this.durata + " minuti";
     }
 }

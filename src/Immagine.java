@@ -37,7 +37,7 @@ public class Immagine extends ElementoMultimediale implements Luminosita {
 	
 	@Override
     public String toString() {
-        return "Elemento Immagine: " + this.titolo;
+        return "Elemento Immagine " + this.titolo;
     }
 
 }

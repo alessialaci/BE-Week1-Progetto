@@ -6,10 +6,9 @@ public class Main {
 	private static int counter = 0;
 
 	public static void main(String[] args) {
-		
+		System.out.println("PLAYER MULTIMEDIALE");
 		System.out.println("Salva qui i tuoi file multimediali (fino a 5 elementi)");
 		lettore();
-		
 	}
 	
 	public static void lettore() {
@@ -22,27 +21,27 @@ public class Main {
 			
 			if(tipo == 1) {
 				Scanner scan2 = new Scanner(System.in);
-				System.out.println("Inserisci il titolo");
+				System.out.println("Inserisci il titolo:");
 				String titolo = scan2.nextLine();
-				System.out.println("Inserisci la durata");
+				System.out.println("Inserisci la durata:");
 				int durata = scan2.nextInt();
-				System.out.println(titolo + durata);
+				System.out.println("Elemento " + titolo + " durata " + durata + " minuti inserito!");
 				elementi[counter] = new Video(titolo, durata);
 			    counter++;
 			} else if(tipo == 2) {
 				Scanner scan3 = new Scanner(System.in);
-				System.out.println("Inserisci il titolo");
+				System.out.println("Inserisci il titolo:");
 				String titolo = scan3.nextLine();
-				System.out.println("Inserisci la durata");
+				System.out.println("Inserisci la durata:");
 				int durata = scan3.nextInt();
-				System.out.println(titolo + durata);
+				System.out.println("Elemento " + titolo + " durata " + durata + " minuti inserito!");
 				elementi[counter] = new Audio(titolo, durata);
 			    counter++;
 			} else if(tipo == 3) {
 				Scanner scan4 = new Scanner(System.in);
-				System.out.println("Inserisci il titolo");
+				System.out.println("Inserisci il titolo:");
 				String titolo = scan4.nextLine();
-				System.out.println(titolo);
+				System.out.println("Elemento " + titolo + " inserito!");
 				elementi[counter] = new Immagine(titolo);
 			    counter++;
 			} else {
@@ -58,7 +57,7 @@ public class Main {
 		}
 
 		sceltaElemento();
-		
+		scan1.close();
 		
 	}
 	
@@ -88,17 +87,19 @@ public class Main {
             default:
             	lettore();
 		}
+		scan6.close();
 	}
 	
 	public static void controlloTipo(ElementoMultimediale array) {
 		if(array instanceof Video) {
 			Scanner scan7 = new Scanner(System.in);
+			System.out.println("Premi il numero corrispondente all'azione desiderata:");
 			System.out.println("1 - Riproduci");
 			System.out.println("2 - Aumenta Volume");
 			System.out.println("3 - Abbassa Volume");
 			System.out.println("4 - Aumenta Luminosità");
 			System.out.println("5 - Abbassa Luminosità");
-			System.out.println("Selezione: ");
+			
 			int select = scan7.nextInt();
 			
 			switch(select) {
@@ -112,27 +113,27 @@ public class Main {
 					break;
 				case(3):
 					((Video) array).abbassaVolume();
-					System.out.println("Luminosita' aumentata!");
+					System.out.println("Volume abbassato!");
 					controlloTipo(array);
 					break;
 				case(4):
 					((Video) array).aumentaLuminosita();
-					System.out.println("Luminosita' aumentata!");
+					System.out.println("Luminosità aumentata!");
 					controlloTipo(array);
 					break;
 				case(5):
 					((Video) array).diminuisciLuminosita();
-					System.out.println("Luminosita' aumentata!");
+					System.out.println("Luminosità abbassata!");
 					controlloTipo(array);
 					break;
 			}
 			scan7.close();
 		} else if (array instanceof Audio) {
 			Scanner scan8 = new Scanner(System.in);
+			System.out.println("Premi il numero corrispondente all'azione desiderata:");
 			System.out.println("1 - Riproduci");
 			System.out.println("2 - Aumenta Volume");
 			System.out.println("3 - Abbassa Volume");
-			System.out.println("Selezione: ");
 			int select = scan8.nextInt();
 			
 			switch(select) {
@@ -146,17 +147,17 @@ public class Main {
 					break;
 				case(3):
 					((Audio) array).abbassaVolume();
-					System.out.println("Luminosita' aumentata!");
+					System.out.println("Volume abbassato!");
 					controlloTipo(array);
 					break;
 			}
 			scan8.close();
 		} else {
 			Scanner scan9 = new Scanner(System.in);
+			System.out.println("Premi il numero corrispondente all'azione desiderata:");
 			System.out.println("1 - Riproduci");
 			System.out.println("2 - Aumenta Luminosità");
 			System.out.println("3 - Abbassa Luminosità");
-			System.out.println("Selezione: ");
 			int select = scan9.nextInt();
 			
 			switch(select) {
@@ -165,12 +166,12 @@ public class Main {
 					break;
 				case(2):
 					((Immagine) array).aumentaLuminosita();
-					System.out.println("Volume aumentato!");
+					System.out.println("Luminosità aumentata!");
 					controlloTipo(array);
 					break;
 				case(3):
 					((Immagine) array).diminuisciLuminosita();
-					System.out.println("Luminosita' aumentata!");
+					System.out.println("Luminosità abbassata!");
 					controlloTipo(array);
 					break;
 			}

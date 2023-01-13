@@ -63,7 +63,7 @@ public class Video extends ElementoMultimediale implements Volume, Luminosita {
 	
 	@Override
     public String toString() {
-        return "Elemento Video: " + this.titolo + " durata: " + this.durata;
+        return "Elemento Video " + this.titolo + " durata " + this.durata + " minuti";
     }
 
 
