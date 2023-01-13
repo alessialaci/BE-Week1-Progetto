@@ -105,6 +105,7 @@ public class Main {
 			switch(select) {
 				case(1):
 					((Video) array).play();
+					sceltaElemento();
 					break;
 				case(2):
 					((Video) array).alzaVolume();
@@ -139,6 +140,7 @@ public class Main {
 			switch(select) {
 				case(1):
 					((Audio) array).play();
+					sceltaElemento();
 					break;
 				case(2):
 					((Audio) array).alzaVolume();
@@ -163,6 +165,7 @@ public class Main {
 			switch(select) {
 				case(1):
 					((Immagine) array).show();
+					sceltaElemento();
 					break;
 				case(2):
 					((Immagine) array).aumentaLuminosita();

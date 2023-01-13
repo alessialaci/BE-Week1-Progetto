@@ -47,8 +47,6 @@ public class Video extends ElementoMultimediale implements Volume, Luminosita {
 			String volume = "";
 			String luminosita = "";
 			
-			System.out.printf("%n%s volume: %s luminosità: %s", this.titolo, volume, luminosita);
-			
 			for(int v = this.volume; v > 0; v--) {
 				volume += "!";
 			}
@@ -56,6 +54,8 @@ public class Video extends ElementoMultimediale implements Volume, Luminosita {
 			for(int l = this.luminosita; l > 0; l--) {
 				luminosita += "*";;
 			}
+			
+			System.out.printf("%n%s volume: %s luminosità: %s", this.titolo, volume, luminosita);
 		}
 
 		System.out.printf("%nFine riproduzione%n%n");
