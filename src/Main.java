@@ -7,6 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		System.out.println("Salva qui i tuoi file multimediali (fino a 5 elementi)");
 		lettore();
 		
 	}
@@ -14,8 +15,6 @@ public class Main {
 	public static void lettore() {
 		
 		Scanner scan1 = new Scanner(System.in);
-		
-		System.out.println("Salva qui tutti i tuoi elementi multimediali");
 			
 		do {
 			System.out.println("Inserisci il tipo. Premi 1 per Video, 2 per Audio o 3 per Immagine");
@@ -52,11 +51,11 @@ public class Main {
 		} while ( counter < 5 );
 		
 		int x = 0;
+		System.out.println("Ecco la lista dei tuoi elementi:");
 		for(int i = 0; i < counter; i++) {
 			x++;
 		    System.out.println(x + " - " + elementi[i]);
 		}
-		
 
 		sceltaElemento();
 		
@@ -65,7 +64,7 @@ public class Main {
 	
 	public static void sceltaElemento() {
 		Scanner scan6 = new Scanner(System.in);
-		System.out.println("Scegli un elemento da mostrare/riprodurre");
+		System.out.println("Scegli un elemento:");
 		int sceltaMedia = scan6.nextInt();
 		switch(sceltaMedia) {
 			case(0):
@@ -93,11 +92,89 @@ public class Main {
 	
 	public static void controlloTipo(ElementoMultimediale array) {
 		if(array instanceof Video) {
-			((Video) array).play();
+			Scanner scan7 = new Scanner(System.in);
+			System.out.println("1 - Riproduci");
+			System.out.println("2 - Aumenta Volume");
+			System.out.println("3 - Abbassa Volume");
+			System.out.println("4 - Aumenta Luminosità");
+			System.out.println("5 - Abbassa Luminosità");
+			System.out.println("Selezione: ");
+			int select = scan7.nextInt();
+			
+			switch(select) {
+				case(1):
+					((Video) array).play();
+					break;
+				case(2):
+					((Video) array).alzaVolume();
+					System.out.println("Volume aumentato!");
+					controlloTipo(array);
+					break;
+				case(3):
+					((Video) array).abbassaVolume();
+					System.out.println("Luminosita' aumentata!");
+					controlloTipo(array);
+					break;
+				case(4):
+					((Video) array).aumentaLuminosita();
+					System.out.println("Luminosita' aumentata!");
+					controlloTipo(array);
+					break;
+				case(5):
+					((Video) array).diminuisciLuminosita();
+					System.out.println("Luminosita' aumentata!");
+					controlloTipo(array);
+					break;
+			}
+			scan7.close();
 		} else if (array instanceof Audio) {
-			((Audio) array).play();
+			Scanner scan8 = new Scanner(System.in);
+			System.out.println("1 - Riproduci");
+			System.out.println("2 - Aumenta Volume");
+			System.out.println("3 - Abbassa Volume");
+			System.out.println("Selezione: ");
+			int select = scan8.nextInt();
+			
+			switch(select) {
+				case(1):
+					((Audio) array).play();
+					break;
+				case(2):
+					((Audio) array).alzaVolume();
+					System.out.println("Volume aumentato!");
+					controlloTipo(array);
+					break;
+				case(3):
+					((Audio) array).abbassaVolume();
+					System.out.println("Luminosita' aumentata!");
+					controlloTipo(array);
+					break;
+			}
+			scan8.close();
 		} else {
-			((Immagine) array).show();
+			Scanner scan9 = new Scanner(System.in);
+			System.out.println("1 - Riproduci");
+			System.out.println("2 - Aumenta Luminosità");
+			System.out.println("3 - Abbassa Luminosità");
+			System.out.println("Selezione: ");
+			int select = scan9.nextInt();
+			
+			switch(select) {
+				case(1):
+					((Immagine) array).show();
+					break;
+				case(2):
+					((Immagine) array).aumentaLuminosita();
+					System.out.println("Volume aumentato!");
+					controlloTipo(array);
+					break;
+				case(3):
+					((Immagine) array).diminuisciLuminosita();
+					System.out.println("Luminosita' aumentata!");
+					controlloTipo(array);
+					break;
+			}
+			scan9.close();
 		}
 	}
 
